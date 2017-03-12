@@ -1,0 +1,25 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+
+{% block header %}
+       <h1 class="detail-header">{{ new.title }}</h1>
+{% endblock header %}
+
+{% block content %}
+	<div class="col-md-12">
+		<div class="post-thumb">
+				<img class="img-thumbnail detail-post-img" src="{{ new.image.url }}">
+			</div>
+
+			<div class="post-content">
+					<div class="date">
+						<h4>{{ new.data_added }}</h4>
+					</div>
+				<div class="entry-content">
+					<p>{{ new.text}}</p>
+				</div>						
+
+			</div>
+	</div>	
+{% endblock content %}

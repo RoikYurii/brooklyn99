@@ -1,0 +1,23 @@
+{% extends 'main\base.html' %}
+{% load static %}
+
+{% block header %}<h1>Seasons</h1>{% endblock header %}
+
+{% block content %}
+
+
+<div class="col-md-12">
+	{% for season in seasons %}
+		<div class="season-block">
+			<a href="{{ season.id }}">
+				<img class="img-thumbnail season-img" src="{{ season.image.url }}">
+			</a>
+			<h3>{{ season.title }}</h3>
+		</div>
+	{% endfor %}
+</div>
+
+
+
+
+{% endblock content %}

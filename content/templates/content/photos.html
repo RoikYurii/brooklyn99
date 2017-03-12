@@ -1,0 +1,19 @@
+{% extends 'main\base.html' %}
+{% load static %}
+
+
+{% block header %}<h1>Gallery</h1>{% endblock header %}
+
+
+{% block content %}
+	<div class="col-md-12">
+		{% for photo in photos %}
+			<a href="{{ photo.image.url }}" data-fancybox="group" data-caption="Brooklyn 9-9">
+				<img class="img-thumbnail gallery-img" src="{{ photo.image.url }}" alt="" />
+			</a>
+		{% endfor %}
+	</div>	
+	
+	<script src="{% static 'js/photos/jquery.fancybox.min.js' %}"></script>
+{% endblock content %}
+

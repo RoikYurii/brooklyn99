@@ -1,0 +1,22 @@
+{% extends 'main\base.html' %}
+{% load static %}
+
+
+{% block header %}<h1>Actors</h1>{% endblock header %}
+
+
+{% block content %}
+
+	<div class="artist-block col-md-12">
+		{% for artist in artists %}
+			<div class="artist-box">
+				<h3 class="artist-name">{{ artist.name }}</h3>
+				<img class="img-thumbnail artist-img" src="{{ artist.serial_image.url }}"align="left">
+				<img class="img-thumbnail artist-img-right" src="{{ artist.life_image.url }}" align="right">
+				<p class="artist-about">{{ artist.about }}</p>
+				
+			</div>
+		{% endfor %}
+	</div>
+
+{% endblock content %}

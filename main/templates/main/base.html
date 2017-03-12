@@ -1,0 +1,75 @@
+{% load bootstrap3 %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Brooklyn 9-9</title>
+        
+        {% bootstrap_css %}
+        {% bootstrap_javascript %}
+        <link rel="stylesheet" type="text/css" href="{% static 'css/photos/jquery.fancybox.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/news.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/content.css' %}">
+         
+    </head>
+
+    <body>
+        <!--Static nav panel-->
+        <nav class="navbar navbar-default navbar-static-top">
+
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed"
+                        data-toggle="collapse" data-target="#navbar"
+                        aria-expanded="false" aria-controls="navbar">
+                    </button>
+                    <a class="navbar-brand" href="{% url 'main:index' %}">
+                        Brooklyn 9-9</a>
+                </div>
+
+                <div id="navbar" class="navbar-collapse collapse" >
+                    <ul class="nav navbar-nav">
+                        <li><a href="{% url 'content:artists' %}">Actors</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav">
+                        <li><a href="{% url 'content:seasons' %}">Videos</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav">
+                        <li><a href="{% url 'content:photos' %}">Photos</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav">
+                        <li><a href="{% url 'content:about' %}">About</a></li>
+                    </ul>                  
+                </div> <!-- /.nav-collapse -->
+            </div>
+        </nav>
+
+        <div class="container">
+            <div class="page-header">
+                {% block header %} {% endblock header %}
+            </div>
+
+        <div class="main-content">
+            <div class="container">
+                <div class="row">
+                {% block content %} {% endblock content%}
+                </div>
+            </div>
+        </div>
+
+        </div> <!-- /container -->
+
+        <footer class="footer">
+            <div class="container">
+                <span class="footer-text">Brooklyn 9-9</span>
+                <span class="powered">Powered by <a href="https://www.linkedin.com/in/yurii-roik-84724213a/">Roik Yurii</a></span>
+            </div>
+        </footer>
+    </body>
+</html>
