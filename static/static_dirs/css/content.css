@@ -1,0 +1,79 @@
+/*GALLERY*/
+.img-thumbnail {
+	background: none;
+	border: none;
+}
+
+.gallery-img {
+	margin-bottom: 4px;
+	width: 200px;
+	height: 135px;
+	border: 1px solid #f6da14;
+	padding: 0px;
+	margin: 5px;
+}
+
+.fancybox-caption {
+	border-top: 1px solid #f6da14;
+	color: #f6da14;
+}
+
+.fancybox-infobar__body,
+.fancybox-button {
+	color: #f6da14;
+}
+
+.fancybox-thumbs {
+	background: #131211;
+}
+
+.fancybox-thumbs > ul > li {
+	border-color: #131211;
+}
+
+.fancybox-thumbs > ul > li:before {
+	border-color: #f6da14;
+}
+
+/*VIDEOS*/
+.season-block {
+	display: inline-block;
+	text-align: center;
+	margin: 10px;
+	border: 
+
+}
+
+.season-img {
+	width: 200px;
+	height: 300px;
+}
+
+/*ACTORS*/
+.artist-block,
+.about-block {
+	border: 4px solid #f6da14;
+}
+
+.artist-box {
+	width: 100%;
+	border: 1px solid #f6da14;
+	padding: 10px;
+	display: inline-block;
+}
+
+.artist-name {
+
+}
+
+.artist-img-right,
+.artist-img {
+	max-width: 210px;
+	max-height: 280px;
+	float: left;
+	display: block;
+}
+
+.artist-img-right {
+	float: right;
+}
