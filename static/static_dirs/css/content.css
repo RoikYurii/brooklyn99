@@ -68,10 +68,11 @@
 
 .artist-img-right,
 .artist-img {
-	max-width: 210px;
 	max-height: 280px;
 	float: left;
 	display: block;
+	width: 225px;
+	max-width: 100%;
 }
 
 .artist-img-right {

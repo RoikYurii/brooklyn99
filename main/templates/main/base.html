@@ -1,3 +1,4 @@
+{% load static %}
 {% load bootstrap3 %}
 
 <!DOCTYPE html>
@@ -13,7 +14,7 @@
         
         {% bootstrap_css %}
         {% bootstrap_javascript %}
-        {% load static %}
+        
         <link rel="stylesheet" type="text/css" href="{% static 'css/photos/jquery.fancybox.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'css/news.css' %}">
@@ -51,7 +52,7 @@
             </div>
         </nav>
 
-        <div class="container">
+        <div class="container main-container">
             <div class="page-header">
                 {% block header %} {% endblock header %}
             </div>
@@ -65,13 +66,12 @@
         </div>
 
         </div> <!-- /container -->
-
-        <footer class="footer">
-            <div class="container">
-                <span class="footer-text">Brooklyn 9-9</span>
-                <span class="powered">Powered by <a href="https://www.linkedin.com/in/yurii-roik-84724213a/">Roik Yurii</a></span>
-            </div>
-        </footer>
-        <script src="{% static 'js/photos/jquery.fancybox.min.js' %}"></script>
+    <footer class="footer">
+        <div class="container">
+            <span class="footer-text">Brooklyn 9-9</span>
+            <span class="powered">Powered by <a href="https://www.linkedin.com/in/yurii-roik-84724213a/">Roik Yurii</a></span>
+        </div>
+    </footer>
+    <script src="{% static 'js/photos/jquery.fancybox.min.js' %}"></script>
     </body>
 </html>
