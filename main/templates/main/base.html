@@ -1,5 +1,4 @@
 {% load bootstrap3 %}
-{% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,15 +7,17 @@
         <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Brooklyn 9-9</title>
+        <title>
+            Brooklyn 9-9 - {% block title %}{% endblock title %}
+        </title>
         
         {% bootstrap_css %}
         {% bootstrap_javascript %}
+        {% load static %}
         <link rel="stylesheet" type="text/css" href="{% static 'css/photos/jquery.fancybox.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'css/news.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'css/content.css' %}">
-         
     </head>
 
     <body>
@@ -71,5 +72,6 @@
                 <span class="powered">Powered by <a href="https://www.linkedin.com/in/yurii-roik-84724213a/">Roik Yurii</a></span>
             </div>
         </footer>
+        <script src="{% static 'js/photos/jquery.fancybox.min.js' %}"></script>
     </body>
 </html>

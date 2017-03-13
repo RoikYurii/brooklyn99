@@ -31,5 +31,8 @@ def season_videos(request, season_id):
 	}
 	return render(request, 'content/season_videos.html', context)
 
+
 def about(request):
-	return render(request, 'content/about.html')
+	#text = About.self.text
+	context = {}
+	return render(request, 'content/about.html', context)

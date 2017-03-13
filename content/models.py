@@ -37,3 +37,11 @@ class Video(models.Model):
 
     def __str__(self):
         return str(self.episode)
+
+
+class About(models.Model):
+   text = models.TextField()
+
+   def __str__(self):
+    return self.text[0:50]
+        

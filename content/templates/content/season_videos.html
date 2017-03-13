@@ -1,6 +1,8 @@
-{% extends 'main\base.html' %}
+{% extends 'main/base.html' %}
 
 
+
+{% block title %}Season {{ season.id }}{% endblock title %}
 {% block header %}<h1>Season {{ season.id }}</h1>{% endblock header %}
 
 {% block content %}
