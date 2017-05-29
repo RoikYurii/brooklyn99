@@ -26,10 +26,10 @@ SECRET_KEY = 'll6mmb&#vh)w5ch%6$h18p_6jw(rfd5eicpnziw-vhrkyfa+2p'
 DEBUG = False
 
 ALLOWED_HOSTS = [
+	'brooklyn99.pythonanywhere.com',
 	'192.168.0.76',
 	'roikyuriy.pythonanywhere.com',
 	'127.0.0.1'
-	'brooklyn99.pythonanywhere.com',
 ]
 
 
