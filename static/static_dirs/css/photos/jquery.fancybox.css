@@ -67,7 +67,7 @@
   font-size: 13px;
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   text-align: center;
-  color: #ddd;
+  color: #ece223;
   background-color: rgba(30, 30, 30, 0.7);
   pointer-events: none;
   -webkit-user-select: none;
@@ -311,10 +311,10 @@
 
 .fancybox-caption {
   padding: 30px 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.4);
+  border-top: #ece223;
   font-size: 14px;
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-  color: #fff;
+  color: #ece223;
   line-height: 20px;
   -webkit-text-size-adjust: none; }
 
@@ -339,7 +339,7 @@
   border-radius: 0;
   cursor: pointer;
   background: transparent;
-  color: #fff;
+  color: #ece223;
   box-sizing: border-box;
   vertical-align: top;
   outline: none; }
@@ -522,7 +522,7 @@
   width: 220px;
   margin: 0;
   padding: 5px 5px 0 0;
-  background: #fff;
+  background: #ece223;
   z-index: 99993;
   word-break: normal;
   -webkit-overflow-scrolling: touch;
@@ -552,7 +552,7 @@
   position: relative;
   cursor: pointer;
   outline: none;
-  border: 5px solid #fff;
+  border: 5px solid #ece223;
   border-top-width: 0;
   border-right-width: 0;
   -webkit-tap-highlight-color: transparent;

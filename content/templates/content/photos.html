@@ -1,17 +1,16 @@
 {% extends 'main/base.html' %}
 
-{% block title %}Gallery{% endblock title %}
-
-{% block header %}<h1>Gallery</h1>{% endblock header %}
+{% block title %}Photos{% endblock title %}
 
 
 {% block content %}
-	<div class="col-md-12">
+	<section class="photos_container">
+		<div class="photos">
 		{% for photo in photos %}
 			<a href="{{ photo.image.url }}" data-fancybox="group" data-caption="Brooklyn 9-9">
-				<img class="img-thumbnail gallery-img" src="{{ photo.image.url }}" alt="" />
+				<img class="img-thumbnail photos__img" src="{{ photo.image.url }}" alt="" />
 			</a>
 		{% endfor %}
-	</div>	
+		</div>
+	</section>
 {% endblock content %}
-

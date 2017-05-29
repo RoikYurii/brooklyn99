@@ -1,21 +1,24 @@
 {% extends 'main/base.html' %}
 
 {% block title %}Actors{% endblock title %}
-{% block header %}<h1>Actors</h1>{% endblock header %}
 
 
 {% block content %}
 
-	<div class="artist-block col-md-12">
-		{% for artist in artists %}
-			<div class="artist-box">
-				<h3 class="artist-name">{{ artist.name }}</h3>
-				<img class="img-thumbnail artist-img" src="{{ artist.serial_image.url }}"align="left">
-				<img class="img-thumbnail artist-img-right" src="{{ artist.life_image.url }}" align="right">
-				<p class="artist-about">{{ artist.about }}</p>
-				
-			</div>
-		{% endfor %}
-	</div>
+	<section class="actors_container">
+		<div class="actors">
+			<div class="actors__header">Actors</div>
+			{% for artist in artists %}
+				<div class="actors__item">
+				<img src="{{ artist.serial_image.url }}" alt="">
+					<div class="actors__text">
+						<div>{{ artist.name }}</div>
+						<p class="">{{ artist.about }}</p>
+					</div>
+						<img src="{{ artist.life_image.url }}" alt="">
+				</div>
+			{% endfor %}
+		</div>
+	</section>
 
 {% endblock content %}

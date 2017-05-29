@@ -1,0 +1,468 @@
+@import "vars"
+@import "reset"
+@import "fonts"
+
+
+
+%container
+  position: relative
+  padding-top: 100px
+  background-size: 100%
+  z-index: 1
+  min-height: 100vh
+  padding-bottom: 70px
+  &::after
+    @extend %bg_after
+    opacity: .1
+    background: linear-gradient(to bottom, $light-color, $revol-color)
+%content
+    background-color: rgba(234, 225, 138, 0.8)
+    border-radius: 15px
+    margin: 0 auto
+    text-align: center
+    padding: 20px 10px
+    box-sizing: border-box
+    &_header
+      text-transform: uppercase
+      font-family: $cursive-font
+      letter-spacing: 2px
+      font-size: 100px
+      margin-bottom: 20px
+      color: $angry-color
+      text-decoration: underline
+%btn
+  position: relative
+  cursor: pointer
+  overflow: hidden
+  text-align: center
+  line-height: 45px
+  vertical-align: middle
+  &::after
+    position: absolute
+    bottom: 0
+    left: 0
+    height: 0
+    width: 100%
+    z-index: 1
+    transition: .3s
+    box-sizing: border-box
+%news_font
+  font-size: 20px
+  font-family: $main-font
+%header_font
+  font-family: $main-font
+  color: $angry-color
+  font-weight: 700
+  font-size: 22px
+  letter-spacing: 1px
+%bg_after
+  content: ""
+  position: absolute
+  height: 100%
+  width: 100%
+  top: 0
+  left: 0
+  background: linear-gradient(to bottom, #8f6d24, $light-color)
+  opacity: .65
+  z-index: -1
+
+.wrapper
+  min-width: 320px
+  max-width: 1920px
+  position: relative
+  margin: 0 auto
+
+.header
+  width: 100%
+  position: absolute
+  top: 0
+  left: 0
+  height: 85px
+  z-index: 100
+  // border-bottom: 1px solid #000
+  display: flex
+  align-items: center
+  justify-content: space-between
+  padding: 0 3%
+  box-sizing: border-box
+  text-align: center
+  // background-color: $revol-color
+  &__logo
+    color: $angry-color
+    font-family: $cursive-font
+    font-size: 35px
+    transition: .1s
+    min-width: 120px
+    // text-shadow: 1px 1px $main-color
+    &:hover
+      transition: .2s
+      transform: scale(1.1)
+  &__btn
+    @extend %header_font
+    @extend %btn
+    width: 200px
+    // background-color: $revol-color
+    height: 45px
+    border-radius: 15px
+    border: 1px solid $angry-color
+    // z-index: 1
+    &::after
+      // @extend %btn_after
+      content: "Watch!"
+      background-color: $angry-color
+    &:hover::after
+      height: 100%
+      color: $main-color
+    &--current
+      &::after
+        transition: 0s
+        height: 100%
+        color: $main-color
+
+.hamburger
+  display: none
+  margin: 0 15px
+  cursor: pointer
+  span
+    width: 50px
+    height: 5px
+    background-color: $angry-color
+    display: block
+    margin: 8px auto
+
+.nav
+  display: flex
+  justify-content: space-around
+  width: 60%
+  span
+    display: none
+  &__item
+    position: relative
+  &__link
+    @extend %header_font
+    &::after
+      content: ""
+      position: absolute
+      bottom: -2px
+      left: 0
+      background-color: $angry-color
+      width: 0
+      height: 2px
+    &:hover::after
+      width: 105%
+      transition: .3s
+    &--current
+      &::after
+        width: 100%
+.start
+  position: relative
+  height: 100vh
+  width: 100%
+  background: url('../img/start_bg.jpg')
+  background-size: cover
+  z-index: 1
+  text-align: center
+  padding-top: 20%
+  box-sizing: border-box
+  &::after
+    @extend %bg_after
+    opacity: .5
+  &__title
+    color: $main-color
+    font-family: $main-font
+    font-size: 75px
+    font-weight: 700
+    text-transform: uppercase
+    text-align: center
+    letter-spacing: 2px
+    text-shadow: 3px 3px $angry-color
+
+.news_container
+  @extend %container
+  position: relative
+  padding-top: 120px
+  background: url('../img/news_bg.jpg') fixed
+  background-size: cover
+  z-index: 1
+  &::after
+    @extend %bg_after
+    opacity: .4
+    background: linear-gradient(to bottom, #8f6d24, $light-color)
+.news
+  @extend %content
+  width: 70%
+  &__header
+    @extend %content_header
+  &__item
+    border-bottom: 2px solid $angry-color
+    text-align: center
+    padding: 20px 0
+    // &:last-child
+    //   border-bottom: 20px solid black
+  &__title
+    @extend %news_font
+    font-size: 35px
+    font-weight: 700
+    color: $angry-color
+    text-transform: uppercase
+    margin-bottom: 15px
+  &__img
+    max-width: 80%
+    margin: 10px 0
+  &__date
+    @extend %news_font
+    font-family: $cursive-font
+    text-align: right
+    color: $angry-color
+  &__start_text
+    @extend %news_font
+    color: $angry-color
+    margin: 10px 0px 20px 0
+  &__text
+    @extend %news_font
+    color: $angry-color
+    margin: 10px 0px 20px 0
+    line-height: 22px
+    font-family: $text-font
+    text-align: left
+  &__btn
+    @extend %btn
+    position: relative
+    border-radius: 10px
+    width: 150px
+    font-family: $main-font
+    text-transform: uppercase
+    font-size: 15px
+    transition: .3s
+    color: $main-color
+    background-color: $angry-color
+    &:hover
+      font-size: 20px
+      transition: .3s
+    &_item
+      width: 200px
+
+.actors_container
+  @extend %container
+  background: url('../img/actors_bg.jpg') fixed no-repeat
+  background-size: 100%
+  &::after
+    opacity: .7
+.actors
+  @extend %content
+  width: 90%
+  background-color: rgba(234, 225, 138, 0.8)
+  img
+    width: 230px
+    height: 300px
+    border-radius: 5px
+    margin: 45px 10px 10px 10px
+  &__header
+    @extend %content_header
+    margin-bottom: 40px
+  &__item
+    display: flex
+    justify-content: space-between
+    margin-bottom: 40px
+  &__text
+    color: $angry-color
+    div
+      font-family: $cursive-font
+      font-size: 25px
+      margin-bottom: 15px
+    p
+      font-family: $text-font
+      color: %angry-color
+      font-size: 17px
+      line-height: 21px
+
+.about_container
+  @extend %container
+  background: url('../img/about_bg.jpg') fixed
+  background-size: cover
+.about
+  @extend %content
+  width: 80%
+  padding: 20px 30px
+  &__header
+    @extend %content_header
+  p
+    font-family: $main-font
+    font-size: 20px
+    color: $angry-color
+    margin: 40px 0 20px 0
+    line-height: 25px
+  img
+    border: 1px solid $angry-color
+    border-radius: 10px
+
+.videos_container
+  @extend %container
+  background: url('../img/videos_bg.jpg') fixed
+  background-size: cover
+.videos
+  @extend %content
+  width: 80%
+  padding: 20px 30px
+  &__header
+    @extend %content_header
+.v_block
+  display: flex
+  flex-flow: row wrap
+  justify-content: space-around
+  padding: 30px 0 20px 0
+  &__item
+    margin: 5px 5px 20px 5px
+  &__title
+    font-family: $cursive-font
+    color: $angry-color
+    font-size: 25px
+    letter-spacing: 2px
+  &__img
+    width: 200px
+    height: 300px
+    border-radius: 5px
+    border: 2px solid $angry-color
+    transition: .1s
+    &:hover
+      transform: scale(1.2)
+      transition: .2s
+  &__sorry
+    min-width: 300px
+    margin-top: 15px
+  p
+    font-family: $main-font
+    font-size: 35px
+    color: $angry-color
+    line-height: 45px
+
+.pagination
+  display: flex
+  font-family: $main-font
+  justify-content: center
+  align-items: center
+  margin-top: 10px
+  font-size: 20px
+  div
+    padding: 10px
+  &--disabled
+    a
+      color: #8b8b8b
+      pointer-events: none
+  &--active
+    a
+      color: $angry-color
+      text-decoration: underline
+
+.footer
+  width: 100%
+  position: absolute
+  bottom: 0
+  left: 0
+  height: 70px
+  line-height: 90px
+  vertical-align: middle
+  text-align: center
+  z-index: 100
+  color: #e0e4a6
+  span
+    font-family: $main-font
+    font-size: 20px
+    text-shadow: 1px 1px $light-color
+    a
+      font-family: $cursive-font
+      color: #e0e4a6
+
+.photos_container
+  @extend %container
+  background: url('../img/photos_bg.jpg') fixed
+  background-size: cover
+.photos
+  @extend %content
+  width: 85%
+  &__img
+    width: 200px
+    height: 150px
+    margin: 5px
+    border-radius: 5px
+
+@media only screen and (max-width: 1000px)
+  %container
+    background-position: center
+  %content
+    width: 95% !important
+  .start
+    padding-top: 150px
+    background-position: center top
+  .actors
+    &__header
+    padding-top:
+    &__item
+      flex-wrap: wrap
+      justify-content: space-around
+    &__text
+      order: -1
+    img
+      margin-top: 20px
+      width: 300px
+      height: 380px
+
+@media only screen and (max-width: 700px)
+  .nav
+    position: absolute
+    left: 2.5%
+    top: 75px
+    width: 95%
+    display: none
+    align-items: center
+    background-color: rgba(234, 225, 138, 1)
+    border-radius: 10px
+    height: 0
+    &__item
+      padding: 35px 0
+    &__link
+      font-size: 30px
+      &:hover::after
+        width: 100%
+    &--mobile
+      display: block
+      height: auto
+  .hamburger
+    display: block
+  .start
+    padding-top: 180px
+    &__title
+      font-size: 60px
+  .about
+    img
+      display: inline-block
+      width: 100%
+
+@media only screen and (max-width: 560px)
+  %content_header
+    font-size: 75px !important
+  .header
+    &__logo
+      width: 120px
+      font-size: 25px
+    &__btn
+      width: 120px
+  .v_block
+    &__title
+      font-size: 30px
+      margin: 5px
+    &__img
+      width: 80%
+      height: auto
+  .photos
+    &__img
+      width: 95%
+      height: auto
+
+
+
+
+
+
+
+// !!!!!!!!!!!!

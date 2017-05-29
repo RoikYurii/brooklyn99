@@ -1,0 +1,57 @@
+{% extends "main/base.html" %}
+
+{% block title %}News{% endblock title %}
+
+{% block content %}
+  <section class="news_container">
+    <div class="news">
+      <div class="news__header">News</div>
+      {% for new in news %}
+        <div class="news__item">
+          <div class="news__title">{{ new.title }}</div>
+          <img class="news__img" src="{{ new.image.url }}" alt="">
+          <div class="news__date">{{ new.data_added }}</div>
+          <div class="news__start_text">{{ new.text|truncatechars:200 }}</div>
+          <a href="{% url 'main:new_detail' new.id %}">
+            <button class="news__btn" type="button" name="button">Read more</button>
+          </a>
+        </div>
+      {% endfor %}
+
+            <div class="pagination">
+              {% if news.number > 1 %}
+                      <div><a href="?page=1">&laquo; First page</a></div>
+                    {% else %}
+                      <div class="pagination--disabled"><a href="">&laquo; First page</a></div>
+                  {% endif %}
+
+                  {% if news.has_previous %}
+                      <div><a href="?page={{ news.previous_page_number }}">&laquo; Prev</a></div>
+                  {% else %}
+                    <div class="pagination--disabled"><a href="">&laquo; Prev</a></div>
+                  {% endif %}
+
+                {% for page in news.paginator.page_range %}
+                  <div class="{% if news.number == page %}pagination--active{% endif %}">
+                    <a href="?page={{ page }}">{{ page }}</a>
+                  </div>
+                {% endfor %}
+
+                  {% if news.has_next %}
+                      <div><a href="?page={{ news.next_page_number }}">Next &raquo;</a></div>
+                    {% else %}
+                <div class="pagination--disabled"><a href="">Next &raquo;</a></div>
+                  {% endif %}
+
+                  {% if news.number < news.paginator.num_pages %}
+                      <div><a href="?page={{ news.paginator.num_pages }}">Last page &raquo;</a></div>
+                    {% else %}
+                      <div class="pagination--disabled"><a href="?page=1">Last page &raquo;</a></div>
+                  {% endif %}
+        </div>
+
+    </div>
+  </section>
+
+
+{% endblock content %}

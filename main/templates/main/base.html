@@ -1,5 +1,5 @@
 {% load static %}
-{% load bootstrap3 %}
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -7,71 +7,56 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        <link href="https://fonts.googleapis.com/css?family=Handlee|Permanent+Marker" rel="stylesheet">
         <title>
             Brooklyn 9-9 - {% block title %}{% endblock title %}
         </title>
-        
-        {% bootstrap_css %}
-        {% bootstrap_javascript %}
-        
+
+
         <link rel="stylesheet" type="text/css" href="{% static 'css/photos/jquery.fancybox.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
-        <link rel="stylesheet" type="text/css" href="{% static 'css/news.css' %}">
-        <link rel="stylesheet" type="text/css" href="{% static 'css/content.css' %}">
     </head>
 
     <body>
-        <!--Static nav panel-->
-        <nav class="navbar navbar-default navbar-static-top">
+      <div class="wrapper">
 
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed"
-                        data-toggle="collapse" data-target="#navbar"
-                        aria-expanded="false" aria-controls="navbar">
-                    </button>
-                    <a class="navbar-brand" href="{% url 'main:index' %}">
-                        Brooklyn 9-9</a>
-                </div>
-
-                <div id="navbar" class="navbar-collapse collapse" >
-                    <ul class="nav navbar-nav">
-                        <li><a href="{% url 'content:artists' %}">Actors</a></li>
-                    </ul>
-                    <ul class="nav navbar-nav">
-                        <li><a href="{% url 'content:seasons' %}">Videos</a></li>
-                    </ul>
-                    <ul class="nav navbar-nav">
-                        <li><a href="{% url 'content:photos' %}">Photos</a></li>
-                    </ul>
-                    <ul class="nav navbar-nav">
-                        <li><a href="{% url 'content:about' %}">About</a></li>
-                    </ul>                  
-                </div> <!-- /.nav-collapse -->
+        <header class="header">
+          <a class="header__logo" href="{% url 'main:index' %}">
+            Brooklyn <nobr>9-9</nobr>
+          </a>
+          <nav class="nav">
+            <div class="nav__item">
+              <a href="{% url 'main:news' %}" class="nav__link">News</a>
             </div>
-        </nav>
-
-        <div class="container main-container">
-            <div class="page-header">
-                {% block header %} {% endblock header %}
+            <div class="nav__item">
+              <a href="{% url 'content:artists' %}" class="nav__link">Actors</a>
             </div>
-
-        <div class="main-content">
-            <div class="container">
-                <div class="row">
-                {% block content %} {% endblock content%}
-                </div>
+            <div class="nav__item">
+              <a href="{% url 'content:photos' %}" class="nav__link">Photos</a>
             </div>
-        </div>
+            <div class="nav__item">
+              <a href="{% url 'content:about' %}" class="nav__link">About</a>
+            </div>
+          </nav>
+          <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <a href="{% url 'content:seasons' %}" class="header__btn">Watch</a>
+        </header>
 
-        </div> <!-- /container -->
-    <footer class="footer">
-        <div class="container">
-            <span class="footer-text">Brooklyn 9-9</span>
-            <span class="powered">Powered by <a href="https://www.linkedin.com/in/yurii-roik-84724213a/">Roik Yurii</a></span>
-        </div>
-    </footer>
+        {% block content %} {% endblock content%}
+
+        <footer class="footer">
+          <span>
+            Powered by <a href="https://www.linkedin.com/in/yurii-roik-84724213a/">Roik Yurii</a>
+          </span>
+        </footer>
+
+      </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
     <script src="{% static 'js/photos/jquery.fancybox.min.js' %}"></script>
+    <script src="{% static 'js/base.js' %}"></script>
     </body>
 </html>

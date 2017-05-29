@@ -2,24 +2,19 @@
 
 {% block title %}News{% endblock title %}
 
-{% block header %}
-       <h1 class="detail-header">{{ new.title }}</h1>
-{% endblock header %}
 
 {% block content %}
-	<div class="col-md-12">
-		<div class="post-thumb">
-				<img class="img-thumbnail detail-post-img" src="{{ new.image.url }}">
-			</div>
 
-			<div class="post-content">
-					<div class="date">
-						<h4>{{ new.data_added }}</h4>
-					</div>
-				<div class="entry-content">
-					<p>{{ new.text}}</p>
-				</div>						
+<section class="news_container">
+  <div class="news">
+      <div class="news__item">
+        <div class="news__title">{{ new.title }}</div>
+        <img class="news__img" src="{{ new.image.url }}" alt="">
+        <div class="news__date">{{ new.data_added }}</div>
+        <p class="news__text">{{ new.text}}</p>
+        <a href="{% url 'main:news' %}">
+          <button class="news__btn news__btn_item" type="button" name="button">Back to news</button>
+        </a>
+      </div>
 
-			</div>
-	</div>	
 {% endblock content %}

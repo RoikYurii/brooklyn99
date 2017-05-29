@@ -1,88 +1,12 @@
 {% extends "main/base.html" %}
 
-{% block title %}Fun site{% endblock title %}
+{% block title %}
+  Fun site
+{% endblock title %}
 
-{% block header %}
-       <h1>News</h1>
-{% endblock header %}
 
 {% block content %}
-	<div class="col-md-8">
-					{% for new in news %}
-						<article class="post">
-
-							<div class="post-thumb">
-								<img class="img-thumbnail post-img" src="{{ new.image.url }}">
-							</div>
-
-							<div class="post-content">
-								<div class="post-header">
-									<h2>
-										{{ new.title }} 
-									</h2>
-									<div class="date">
-										<h4>{{ new.data_added }}</h4>
-									</div>
-								</div>
-								<div class="entry-content">
-									<p>{{ new.text|truncatechars:200 }}
-										<a href="{% url 'main:new_detail' new.id %}"><button>Read more</button></a>
-									</p>
-
-								</div>	
-							</div>
-
-						</article>
-					{% endfor %}
-
-					<div class="text-center">
-						<ul class="pagination">
-
-								{% if news.number > 1 %}
-					            	<li><a href="?page=1">&laquo; First page</a></li>
-					            {% else %}
-					            	<li class="disabled"><a href="">&laquo; First page</a></li>
-					        	{% endif %}
-
-					        	{% if news.has_previous %}
-					            	<li><a href="?page={{ news.previous_page_number }}">&laquo; Prev</a></li>
-					            {% else %}
-									<li class="disabled"><a href="">&laquo; Prev</a></li>
-					        	{% endif %}
-								
-									{% for page in news.paginator.page_range %}
-										<li class="{% if news.number == page %}active{% endif %}">
-											<a href="?page={{ page }}">{{ page }}</a>
-										</li>
-									{% endfor %}
-
-					        	{% if news.has_next %}
-					            	<li><a href="?page={{ news.next_page_number }}">Next &raquo;</a></li>
-					            {% else %}
-									<li class="disabled"><a href="">Next &raquo;</a></li>
-					        	{% endif %}
-
-					        	{% if news.number < news.paginator.num_pages %}
-					            	<li><a href="?page={{ news.paginator.num_pages }}">Last page &raquo;</a></li>
-					            {% else %}
-					            	<li class="disabled"><a href="?page=1">Last page &raquo;</a></li>
-					        	{% endif %}
-						</ul>
-					</div>
-	</div>
-	<div class="col-md-4 right-block">
-		<div class="timer">		
-			<script src="http://e-timer.ru/js/etimer.js"></script>
-			<script type="text/javascript">
-				jQuery(document).ready(function() {
-					jQuery(".eTimer").eTimer({
-						etType: 0, etDate: "14.04.2017.0.0", etTitleText: " Time left until new series", etTitleSize: 24, etShowSign: 0, etSep: ":", etFontFamily: "Trebuchet MS", etTextColor: "#f6da14", etPaddingTB: 4, etPaddingLR: 2, etBackground: "black", etBorderSize: 0, etBorderRadius: 2, etBorderColor: "white", etShadow: " 0px 0px 0px 0px #060606", etLastUnit: 4, etNumberFontFamily: "Impact", etNumberSize: 35, etNumberColor: "#f6da14", etNumberPaddingTB: 1, etNumberPaddingLR: 3, etNumberBackground: "#0a0a0a", etNumberBorderSize: 0, etNumberBorderRadius: 5, etNumberBorderColor: "black", etNumberShadow: " 0px 0px 0px 0px rgba(0, 0, 0, 0.85)"
-					});
-				});
-			</script>
-			<div class="eTimer"></div>
-		</div>
-	</div>
-
+<section class="start">
+  <h1 class="start__title">The law.<br>Without the order.</h1>
+</section>
 {% endblock content %}
-

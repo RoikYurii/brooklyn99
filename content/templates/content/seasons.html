@@ -5,19 +5,20 @@
 
 {% block content %}
 
-
-<div class="col-md-12">
-	{% for season in seasons %}
-		<div class="season-block">
-			<a href="{{ season.id }}">
-				<img class="img-thumbnail season-img" src="{{ season.image.url }}">
-			</a>
-			<a href="{{ season.id }}"><h3>{{ season.title }}</h3></a>
+	<section class="videos_container">
+		<div class="videos">
+			<div class="videos__header">Seasons</div>
+			<div class="v_block">
+				{% for season in seasons %}
+					<div class="v_block__item">
+						<a href="{{ season.id }}">
+							<img class="v_block__img" src="{{ season.image.url }}" alt="">
+						</a>
+						<div class="v_block__title">{{ season.title }}</div>
+					</div>
+				{% endfor %}
+			</div>
 		</div>
-	{% endfor %}
-</div>
-
-
-
+	</section>
 
 {% endblock content %}
