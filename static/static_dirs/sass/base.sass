@@ -3,7 +3,8 @@
 @import "fonts"
 
 
-
+body
+  overflow-x: hidden
 %container
   position: relative
   padding-top: 100px
@@ -153,7 +154,7 @@
       transition: .3s
     &--current
       &::after
-        width: 100%
+        width: 105%
 .start
   position: relative
   height: 100vh
@@ -409,24 +410,26 @@
 
 @media only screen and (max-width: 700px)
   .nav
+    display: block
     position: absolute
     left: 2.5%
-    top: 75px
+    top: -500px
     width: 95%
-    display: none
     align-items: center
     background-color: rgba(234, 225, 138, 1)
     border-radius: 10px
-    height: 0
+    height: auto
+    transition: all .4s ease-in
     &__item
       padding: 35px 0
     &__link
       font-size: 30px
+      &::after
+        width: 0
       &:hover::after
-        width: 100%
+        width: 0
     &--mobile
-      display: block
-      height: auto
+      top: 90px
   .hamburger
     display: block
   .start
@@ -440,7 +443,7 @@
 
 @media only screen and (max-width: 560px)
   %content_header
-    font-size: 75px !important
+    font-size: 65px !important
   .header
     &__logo
       width: 120px
@@ -458,7 +461,9 @@
     &__img
       width: 95%
       height: auto
-
+@media only screen and (max-width: 435px)
+  %content_header
+    font-size: 45px !important
 
 
 
