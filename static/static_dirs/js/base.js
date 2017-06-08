@@ -1,4 +1,5 @@
 $(document).ready(function() {
+
   $('.hamburger').click(function(e) {
      let startHeight = $('.start').innerHeight()
       $('.start').removeClass('start--min')
@@ -23,5 +24,6 @@ $(document).ready(function() {
         $(this).addClass('header__btn--current');
       }
     });
+
   });
 });

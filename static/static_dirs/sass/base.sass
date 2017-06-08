@@ -3,7 +3,8 @@
 @import "fonts"
 
 
-body
+
+wrapper
   overflow-x: hidden
 %container
   position: relative
@@ -15,14 +16,14 @@ body
   overflow: hidden
   &::after
     @extend %bg_after
-    opacity: .1
-    background: linear-gradient(to bottom, $light-color, $revol-color)
+    // opacity: 1
+    // background: linear-gradient(to bottom, $light-color, $revol-color)
 %content
     background-color: rgba(234, 225, 138, 0.8)
     border-radius: 15px
     margin: 0 auto
     text-align: center
-    padding: 20px 10px
+    padding: 20px 20px
     box-sizing: border-box
     &_header
       text-transform: uppercase
@@ -57,6 +58,7 @@ body
   font-weight: 700
   font-size: 22px
   letter-spacing: 1px
+  // text-shadow: 1px 1px $light-color
 %bg_after
   content: ""
   position: absolute
@@ -87,7 +89,7 @@ body
   padding: 0 3%
   box-sizing: border-box
   text-align: center
-  // background-color: $revol-color
+  background: linear-gradient(to bottom, rgba(247, 177, 26, 0.63), rgba(255, 255, 255, 0))
   &__logo
     color: $angry-color
     font-family: $cursive-font
@@ -98,6 +100,7 @@ body
     &:hover
       transition: .2s
       transform: scale(1.1)
+      text-shadow: 1px 1px $main-color
   &__btn
     @extend %header_font
     @extend %btn
@@ -144,14 +147,16 @@ body
     &::after
       content: ""
       position: absolute
-      bottom: -2px
+      bottom: -4px
       left: 0
       background-color: $angry-color
       width: 0
       height: 2px
-    &:hover::after
-      width: 105%
-      transition: .5s
+    &:hover
+      // text-shadow: 1px 1px $main-color
+      &::after
+        width: 105%
+        transition: .5s
     &--current
       &::after
         width: 105%
@@ -163,12 +168,13 @@ body
   background-size: cover
   z-index: 1
   box-sizing: border-box
-  transition: all .5s
-  padding-top: 25%
+  transition: all .2s
+  padding-top: 15%
   &--min
     height: 515px
   &::after
     @extend %bg_after
+    background: linear-gradient(to bottom, #8f6d24, $light-color)
     opacity: .5
   &__title
     color: $main-color
@@ -194,6 +200,7 @@ body
 .news
   @extend %content
   width: 70%
+  padding: 20px 60px
   &__header
     @extend %content_header
   &__item
@@ -240,7 +247,7 @@ body
     color: $main-color
     background-color: $angry-color
     &:hover
-      font-size: 20px
+      font-size: 18px
       transition: .3s
     &_item
       width: 200px
@@ -371,7 +378,7 @@ body
   span
     font-family: $main-font
     font-size: 20px
-    text-shadow: 1px 1px $light-color
+    text-shadow: 1px 1px $angry-color
     a
       font-family: $cursive-font
       color: #e0e4a6
@@ -386,14 +393,16 @@ body
   &__img
     width: 200px
     height: 150px
-    margin: 5px
+    margin: 15px
     border-radius: 5px
+    padding: 0px
 
 @media only screen and (max-width: 1000px)
   %container
     background-position: center
   %content
     width: 95% !important
+    padding: 20px 30px
   .start
     padding-top: 150px
     background-position: center top

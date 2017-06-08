@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
 	'brooklyn99.pythonanywhere.com',
-	#'192.168.0.76',
+	'192.168.0.76',
 	#'roikyuriy.pythonanywhere.com',
 	'127.0.0.1'
 ]
