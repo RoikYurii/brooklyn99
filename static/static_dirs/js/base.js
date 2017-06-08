@@ -1,8 +1,14 @@
 $(document).ready(function() {
   $('.hamburger').click(function(e) {
+     let startHeight = $('.start').innerHeight()
+      $('.start').removeClass('start--min')
       $('.nav').toggleClass('nav--mobile')
+      if (startHeight < 515) {
+        $('.start').addClass('start--min')
+      };
       e.preventDefault();
     });
+
   $(function () {
     let location = window.location.href;
     $('.nav__link').each(function () {
